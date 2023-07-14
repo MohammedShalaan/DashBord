@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400&family=Poppins:wght@100;200;400;500;600&display=swap');
+
+/* simple explane to unit  */
+/* 
+em: relative to font size of elemint حجم الخط الحالى فى نفس السيليكتور
+rem: relative to root of elemint  يعمل استندا على حجم الخط فى الاتش تى ام ال 
+vw: viewport width عرض الشاشه الحالى  
+vh: viewport Hight طول الشاشه الحالى   
+%: relative to font size of elemint  
+*/
+/* the end of simple explane to unit  */
+
+:root{
+    --color-primary:#7380ec;
+    --color-danger:#ff7782;
+    --color-success:#41f1b6;
+    --color-warnig:#ffbb55;
+    --color-white:#fff;
+    --color-info-dark:#7d8da1;
+    --color-info-light:#dce1eb;
+    --color-dark:#363949;
+    --color-light:rgba(132,139,200,0.18);
+    --color-primary-variant:#111e88;
+    --color-dark-variant:#677483;
+    --color-backgeound:#f6f6f9;
+    
+    --card-border-radius:2rem;
+    --border-radius-1:0.4rem;
+    --border-radius-2:0.8rem;
+    --border-radius-3:1.2rem;
+    
+    --card-padding:1.8rem;
+    --padding-1:1.2rem;
+    
+    --box-shadow:0 2rem 3rem var(--color-light)
+    
+    }
+
+    *{
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        border: 0;
+        list-style: none;
+        box-sizing: border-box;
+
+    }
+
+    html{
+        font-size: 14px;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        font-size: 0.88rem;
+        background: var(--color-backgeound);
+        user-select: none;
+        overflow-x: hidden;
+
+    }
+    .contaner{
+        width: 98% ;
+        margin: 0 auto;
+        /* background-color: var(--color-primary); */
+        display: grid;
+        gap: 1.8rem;
+        grid-template-columns: 16rem auto 26rem;
+        /* 16rem auto 23rem */
+
+    }
+
+    a{
+        color: var(--color-dark);
+    }
+    img{
+        display: block;
+        width: 140px;
+    }
+    h1{
+        font-weight: 800;
+        font-size: 1.8rem;
+    }
+    h2{
+        font-size: 1.4rem;
+    }
+    h3{
+        
+        font-size: 0.87rem;
+    }
+    h4{
+        
+        font-size: 0.8rem;
+    }
+    h5{
+        
+        font-size: 0.77rem;
+    }
+    small{
+        
+        font-size: 0.77rem;
+    }
+    .profile-photo{
+        width:2.8rem ;
+        height: 2.8rem;
+        border-radius:50% ;
+        overflow: hidden;
+
+    }
+    .text-muted{
+        color: var(--color-info-dark);
+
+    }
+    p{
+        color: var(--color-dark-variant);
+    }
+    b{
+        color: var(--color-dark);
+    }
+    .primary{
+        color: var(--color-primary);
+    }
+    .danger{
+        color: var(--color-danger);
+    }
+    .success{
+        color: var(--color-success);
+    }
+    .warning{
+        color: var(--color-warnig);
+    }
+
+    /* start style aside */
+    aside{
+        height: 100vh;
+        background-color: var(--color-backgeound);
+        display: flex;
+        flex-flow: column;
+        box-shadow:5px -4px 17px -19px rgba(0,0,0,0.59);
+        /* gap: 100px; */
+    }
+    aside .top{
+        /* background-color: var(--color-backgeound); */
+        display: flex;
+        /* gap: 20px; */
+        justify-content:space-between;
+        align-items: center;
+        margin-top: 1.4rem;
+        
+    }
+    aside .logo{
+
+    }
+    aside .logo img{
+        width: 7rem;
+        /* height: 2rem; */
+    }
+    aside .close{
+       display: none;
+    }
+
+    /* ================ sidbar =============== */
+    aside .sidebar{
+        /* background-color: var(--color-backgeound); */
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        height: 86vh;
+        position: relative;
+        top: 3rem;
+    }
+    aside h3{
+        font-weight: 500;
+        /* font-family: 'Cairo'; */
+        /* color: var(--color-info-dark); */
+    }
+
+     aside .sidebar a{
+       display: flex;
+       align-items: center;
+       gap: 10px;
+       margin-left: 10px ;
+       color: var(--color-info-dark);
+       position: relative;
+       height: 3.2rem;
+       transition: all 300ms ease-in-out;
+    }
+    aside .sidebar a span{
+        font-size: 1.6rem;
+        transition: all 300ms ease-in-out;
+    }
+    aside .sidebar a:last-child{
+        position: absolute;
+        bottom: 3rem;
+        width: 100%;
+     }
+    aside .sidebar a.active{
+        margin: 0;
+        color:var(--color-primary) ;
+        background-color: var(--color-light);
+    }
+    aside .sidebar a.active::before{
+        content: '';
+        width: 6px;
+        height: 100%;
+        background-color: var(--color-primary);
+    }
+    aside .sidebar a.active span{
+        margin-left: calc(1rem - 3px);
+    }
+    aside .sidebar a:hover{
+        color: var(--color-primary);
+    }
+    aside .sidebar a:hover span{
+       margin-left: 10px;
+    }
+
+    aside .sidebar a .message-count{
+        background-color: var(--color-danger);
+        color: var(--color-backgeound);
+        font-size: 0.9rem;
+        width: 2rem;
+        text-align: center;
+        border-radius: var(--border-radius-1);
+    }
+
+/* ================ main bar  =============== */
+    main{
+        margin-top: 1.2rem;
+    }
+    main .date{
+        display: inline-block;
+        background: var(--color-light);
+        border-radius: var(--border-radius-1);
+        margin-top: 1rem;
+        padding: 0.5rem 1.6rem;
+    }
+    main .date input[type="date"]{
+        background: transparent;
+        color: var(--color-dark);
+    }
+    main .insghts{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        gap: 1.6rem;
+    } 
+    main .insghts >div{
+        /* width: 300px; */
+        background-color: var(--color-backgeound);
+        padding: var(--card-padding);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--box-shadow);
+        transition: all 300ms ease-in-out;
+    }
+    main .insghts >div:hover{
+        box-shadow: none;
+    }
+    main .insghts >div span{
+        background: red;
+        color: var(--color-white);
+        padding: 3px;
+        border-radius: 50%;
+        font-size: 2rem;   
+    }
+    main .insghts >div.sales span{
+        background: rgb(136, 7, 211);
+
+    }
+    main .insghts >div.two span{
+        background: rgb(211, 7, 24);
+
+    }
+    main .insghts >div.three span{
+        background: rgb(7, 211, 17);
+
+    }
+    main .insghts div.middel {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+        /* gap: 10px;
+        justify-content: space-between; 
+        align-items: center;
+        flex-flow: row; */
+
+    }
+    main .insghts .progress  {
+    /* background-color: #111e88; */
+    position: relative;
+    width: 6rem;
+    height: 6rem;
+    /* border-radius: 50%; */
+
+    }
+
+    /*============================ the start of progress edit style  ============================*/
+    
+    main .insghts .progress svg {
+        /* background-color: red; */
+        position: relative;
+        width: 7rem;
+        height:7rem;
+    }
+    main .insghts .progress svg circle{
+        
+        fill: none;
+        /* stroke: var(--color-primary); */
+        stroke-width: 13px;
+        transform: translate(5px,5px);
+        stroke-linecap: round;
+        stroke-dasharray: 230;
+        stroke-dashoffset:230 ;
+    }
+    main .insghts .progress svg circle:nth-child(1){
+        stroke-dashoffset:0 ;
+        stroke: var(--color-info-light);
+    }
+    main .insghts .sales .progress svg circle:nth-child(2){
+        stroke-dashoffset:calc(230 - (230 * 81) / 100) ;
+        stroke: var(--color-primary);
+        transition: all 300ms ease-in-out;
+    }
+  
+   
+    main .insghts .two .progress svg circle:nth-child(2){
+        stroke-dashoffset:calc(230 - (230 * 30) / 100) ;
+        stroke: var(--color-primary);
+    }
+  
+    main .insghts .three .progress svg circle:nth-child(2){
+        stroke-dashoffset:calc(230 - (230 * 55) / 100) ;
+        stroke: var(--color-primary);
+    }
+   
+  
+    main .insghts .progress .number {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*============================ the end of progress edit style  ============================*/
+    /*============================ the start of table edit style  ============================*/
+    main .tableContaner{
+        padding-top: 3rem;
+    }
+    main .tableContaner h1{
+        /* text-align: center; */
+    }
+    main .tableContaner p{
+        /* text-align: center; */
+        padding-bottom: 2rem;
+    }
+    main .tableContaner table{
+        width:100% ;
+        text-align: center;
+        margin-bottom:10px ;
+        border-radius: var(--card-border-radius);
+        padding: 0.8rem;
+        background-color: var(--color-backgeound);
+        box-shadow: var(--box-shadow);
+        transition: all 300ms ease-in-out;
+    }
+    main .tableContaner table:hover{
+        box-shadow:none;
+    }
+    main .tableContaner table thead {
+        height: 3rem;
+    }
+    main .tableContaner table tbody td{
+        height: 2.8rem;
+
+        border-bottom:1px solid var(--color-light);
+    }
+    main .tableContaner table tbody tr:last-child td{
+    
+        border-bottom:none;
+    }
+    main .lol{
+        margin-top: 20px;
+
+        /* background-color: #363949; */
+        /* width: 100%; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+    }
+    main .tableContaner a{
+        width: 100px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:var(--color-backgeound);
+        border-radius: var(--border-radius-1);
+        color: var(--color-primary);
+        /* box-shadow: var(--box-shadow); */
+        transition: all 300ms ease-in-out;
+    }
+    main .tableContaner a:hover{
+     
+        background-color:var(--color-primary);
+        color: var(--color-white);
+    }
+
